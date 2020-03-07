@@ -40,4 +40,10 @@ router.delete("/whishlist-movie/:name", async function(req, res, next) {
   res.json({ result });
 });
 
+router.get("/whishlist-movie", async function(req, res, next) {
+  var movies = await movieModel.find();
+
+  res.json({ movies });
+});
+
 module.exports = router;
